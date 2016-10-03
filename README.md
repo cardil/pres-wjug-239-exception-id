@@ -1,5 +1,5 @@
-# OSD 2016 - Publikowanie kodu Open Source
+# CareerCon 2016 - Co zyskujemy publikując kod Open Source?
 
-Prezentacja przedstawiona na konferencji Open Source Day 2016
+Prezentacja przedstawiona na konferencji CareerCon 2016
 
-http://opensourceday.pl/
+http://careercon.pl/konferencja/kariera-it-warszawa-01-10-2016/
