@@ -1,5 +1,5 @@
-# CareerCon 2016 - Co zyskujemy publikując kod Open Source?
+# WJUG 239 - ExceptionID - Sytuacje wyjątkowe w aplikacjach
 
-Prezentacja przedstawiona na konferencji CareerCon 2016
+Prezentacja przedstawiona na meetup WJUG 239
 
-http://careercon.pl/konferencja/kariera-it-warszawa-01-10-2016/
+https://cardil.github.io/pres-wjug-239-exception-id

@@ -401,8 +401,8 @@ ERROR 2016-01-11T22:48:42.445 EidIllegalStateException:
           <div>
 						<p><strong><code>checkNotNull</code></strong></p>
             <br />
-            <pre style="font-size: 1em;"><code class="java"> User safeUser = checkNotNull(
-   user, "20150721:115515"
+            <pre style="font-size: 1em;"><code class="java"> User user = checkNotNull(
+   nullableUser, "20150721:115515"
  );</code></pre>
 
 						<br />
@@ -429,7 +429,7 @@ ERROR 2016-01-11T22:48:42.445 EidIllegalStateException:
 						<p><strong><code>tryToExecute</code></strong></p>
             <br />
             <pre style="font-size: 0.8em;"><code>InputStream is = tryToExecute(
-    () -> { loadFile("project.properties"); },
+    () -> loadFile("project.properties"),
     "20150718:121521"
 );</code></pre>
 
