@@ -1,41 +1,39 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>OSD 2016 - Publikowanie kodu na licencji Open Source</title>
+    <title>WJUG 239 - ExceptionID - Sytuacje wyjątkowe w aplikacjach</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/careercon.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/careercon.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-        <section data-background-image="images/kariera-IT.png"
-          data-background-color="#231F27"
-          data-background-transition="slide"
-          class="dark">
-          <p class="vspace" />
-          <address class="title">
-            <strong><big>&bdquo;Co zyskujemy publikując kod<br/>Open Source?&ldquo;</big></strong>
-						<br/>
-						<br/>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <link rel="shortcut icon" type="image/png" href="images/logos/java-icon.png"/>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section
+          data-background-transition="slide">
+            <h1>Exception ID</h1>
+            <strong><big>Sytuacje wyjątkowe w aplikacjach</big></strong>
+            <br/>
+            <br/>
             Krzysztof Suszyński<br/>
-            <small>Centralny Ośrodek Informatyki</small>
-          </address>
+            <small>WJUG 239</small>
+
         </section>
 
         <section>
@@ -44,418 +42,478 @@
             <li><img src="images/ksuszynski-photo.jpg"
               style="float: right; margin: 1em"
               class="boxed" />
-              Główny programista w COI / Trener w SAGES</li>
+              Senior Developer w ITM / Trener w SAGES</li>
             <li>Ewangelizuje Javą i Puppetem</li>
             <li>Publikacje OSS @ Gov</li>
             <li>Wiele publikacji OSS w różnych językach: java, ruby, javascript</li>
           </ul>
           <img src="images/github-contrib.png" class="boxed" />
         </section>
-        <section>
-          <section>
-            <img src="images/logos/OpenSource.png" height="600px" />
-          </section>
-          <section>
-            <h1>O czym opowiem?</h1>
-            <ul>
-              <li>Czym jest Open Source Software (OSS)?</li>
-              <li class="fragment">Jakie zalety ma publikowanie OSS?</li>
-              <li class="fragment">Jak wprowadzić publikowanie OSS w firmie?</li>
-              <li class="fragment">Co zyskaliśmy w pl.ID dzięki publikowaniu OSS?</li>
-            </ul>
-          </section>
-          <section>
-            <h1>Dla kogo ta prezentacja?</h1>
-          </section>
-        </section>
-        <section>
-          <section>
-            <h1>Open Source vs<br/> Free Software</h1>
-          </section>
-					<section>
-						<h2>Open Source Software (OSS)</h2>
-						<ul>
-							<li><img src="images/logos/OpenSource.png" height="200" style="float: right" /> <mark>Program marketingowy</mark> skierowany do przedsiębiorstw</li>
-							<li class="fragment">Podkreślanie <mark>zalet technicznych</mark> i rentowności otwartych modeli rozwoju</li>
-							<li class="fragment">Pomijanie <mark>kwestii etycznych</mark> i politycznych</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Free(dom) Software</h2>
-						<ul>
-							<li><img src="images/logos/fsf-round-logo.svg" height="200" style="float: right" /> <mark>Ideologia</mark> dotycząca wytwarzania oprogramowania</li>
-							<li class="fragment">Skupia się na <mark>kwestiach etycznych</mark> i politycznych</li>
-							<li class="fragment"><mark>Cztery</mark> poziomy wolności: do uruchamiania, do analizy i modyfikacji, do redystrybucji i do dystrybucji zmodyfikowanego kodu</li>
-						</ul>
-					</section>
 
-					<section>
-						<table>
-		            <tr>
-		              <th>Podobieństwa</th>
-		              <th><img src="images/logos/OpenSource.png" height="100" /></th>
-		              <th><img src="images/logos/fsf-round-logo.svg" height="100" /></th>
-		            </tr>
-		            <tr>
-		              <td>Otwartość kodu</td>
-		              <td>tak</td>
-		              <td>tak</td>
-		            </tr>
-								<tr>
-		              <td>Wolność redystrybucji</td>
-		              <td>tak</td>
-		              <td>tak</td>
-		            </tr>
-								<tr>
-		              <td>Znaczenie</td>
-		              <td>Nie myli się z freeware</td>
-		              <td>Często mylone z freeware</td>
-		            </tr>
-
-		        </table>
-					</section>
-					<section>
-						<table>
-		            <tr>
-		              <th>Różnice</th>
-		              <th><img src="images/logos/OpenSource.png" height="100" /></th>
-		              <th><img src="images/logos/fsf-round-logo.svg" height="100" /></th>
-		            </tr>
-		            <tr>
-		              <td>Idea</td>
-		              <td>Model biznesowy, oparty o otwartość oprogramowania</td>
-		              <td>Wolność do używania, modyfikacji i dystrybucji oprogramowania</td>
-		            </tr>
-								<tr>
-		              <td>Zakres</td>
-		              <td>Nie każdy OSS jest free</td>
-		              <td>Każdy free software jest OSS</td>
-		            </tr>
-								<tr>
-									<td>Popularność</td>
-									<td>duża</td>
-									<td>ograniczona</td>
-								</tr>
-		        </table>
-					</section>
+        <section>
+          <h1>O czy opowiem?</h1>
         </section>
 
-				<section>
-					<section>
-						<h1>Modele biznesowe dla Open Source</h1>
-					</section>
-					<section>
-						<h2>Oprogramowanie otwarte nie wyklucza sprzedaży i komercyjnego wykorzystania</h2>
-						<span style="display: inline-block; background: white; padding: 1em;">
-              <img height="100" src="images/logos/zabbix-logo.png" class="boxed"/>
-              <img height="100" src="images/logos/RedHat.png" class="boxed"/>
-              <img height="100" src="images/logos/edb.png" class="boxed"/>
-              <img height="100" src="images/logos/Puppet-Logo-Amber-Black-lg.png" class="boxed"/>
-            </span>
-					</section>
-					<section>
-						<h2>Sprzedaż dodatkowych usług</h2>
-            <ul>
-              <li>szkolenia z obsługi</li>
-              <li>wsparcie klienta</li>
-              <li>dostęp do dodatkowych rozszerzeń, wtyczek, dodatków i modułów</li>
-            </ul>
-						<span style="display: inline-block; background: white; padding: 1em;">
-              <img height="100" src="images/logos/pivotal-logo.png" class="boxed"/>
-              <img height="100" src="images/logos/docker.png" class="boxed"/>
-              <img height="100" src="images/logos/edb.png" class="boxed"/>
-            </span>
-					</section>
-					<section>
-						<h2>Sposób wprowadzenia klienta w inne, płatne produkty firmy</h2>
-						<span style="display: inline-block; background: white; padding: 1em;">
-              <img height="100" src="images/logos/Puppet-Logo-Amber-Black-lg.png" class="boxed"/>
-              <img height="100" src="images/logos/sonarsource.png" class="boxed"/>
-              <img height="100" src="images/logos/hashicorp.png" class="boxed"/>
-            </span>
-					</section>
-					<section>
-						<h2>Pobieranie opłaty za dostęp do najnowszych, często aktualizowanych wersji swoich produktów</h2>
-						<span style="display: inline-block; background: white; padding: 1em;">
-              <img height="100" src="images/logos/RedHat.png" class="boxed"/>
-            </span>
-					</section>
-					<section>
-						<h2>Wersje gotowe do użytku mogą być dostarczane za dodatkową opłatą</h2>
-						<span style="display: inline-block; background: white; padding: 1em;">
-              <img height="150" src="images/logos/google-logo.png" class="boxed"/>
-            </span>
-					</section>
-				</section>
+        <section>
+          <div>
+            <h2>Powiem jak to okiełznać</h2>
+            <img src="images/exception.png" />
+          </div>
+        </section>
 
-				<section>
-					<h1>Co zyskujemy publikując na licencji Open Source?</h1>
-					<h3>Nawet w tradycyjnej firmie</h3>
-				</section>
+        <section>
+          <div>
+            <h2>Jak sprawić, by strony 500 były przydatne</h2>
+            <img style="height:300px" src="images/google-500-error.png" />
+          </div>
+        </section>
 
-				<section>
-					<section>
-						<h1>Mierzalne zyski</h1>
-						<h2>publikacji OSS</h2>
-					</section>
-					<section>
-						<h2>Oszczędności na infrastrukturze</h2>
-						<ul>
-							<li><mark>Każdy kod</mark> wymaga infrastruktury developerskiej</li>
-							<li class="fragment">Im większą jakość chcemy uzyskać, tym <mark>więcej środków</mark> trzeba wygospodarować</li>
-							<li class="fragment">Koszty licencji, serwerów i <mark>utrzymania systemów</mark></li>
-							<li class="fragment"><mark>Continuous</mark> build, testing, inspection, integration, delivery oraz deployment</li>
-						</ul>
-						<p class="fragment">
-							Kod otwarty najczęściej nie wymaga infrastruktury, korzysta ze wspólnych, światowych zasobów (<mark class="important">Sponsoring</mark>)
-						</p>
-					</section>
-					<section>
-						<h2>Testowanie w różnych kontekstach</h2>
-						<ul>
-							<li>Użytkownicy naszego kodu testują go w <mark>innych</mark> niż my okolicznościach</li>
-							<li class="fragment">Zyskujemy na testowaniu nieprzewidzianych jeszcze use case'ów</li>
-							<li class="fragment">Zyskujemy inne pomysły na użycie naszego kodu</li>
-						</ul>
-						<p class="fragment">
-							Niestety tylko część osób zgłasza błędy. Szacuje że waha się to <mark>od 15% do 60%</mark> - zależnie od technologii, mentalności itp.
-						</p>
-					</section>
-					<section>
-						<h2>Zgłoszenia Pull Request</h2>
-						<ul>
-							<li>Użytkownicy naszego kodu mogą zgłosić swoją, poprawioną wersję w mechaniźmie <mark>Pull Request</mark></li>
-							<li class="fragment">Możemy wymusić <mark>odpowiednią jakość</mark> takiej zmiany przez testy i progi jakości</li>
-							<li class="fragment">Możemy zyskać poprawkę lub rozszerzenie, które może się nam przydać <mark>zupełnie za darmo</mark></li>
-						</ul>
-						<p class="fragment">
-							Niestety tylko część osób zgłasza PR. Szacuje, że waha się to <mark>od 5% do 30%</mark> - zależnie od technologii, mentalności itp.
-						</p>
-					</section>
-					<section>
-						<h2>Rozpoznawalność firmy</h2>
-						<ul>
-							<li>Używanie naszego kodu przez innych programistów powoduje <mark>wzrost rozpoznawalności</mark></li>
-							<li class="fragment">Możemy sprawdzać po <mark>ilości ściągnięć</mark>, użyć, wzmianek w portalach społecznościowych itp.</li>
-							<li class="fragment">Łatwiej o <mark>rekrutację</mark> specjalistów</li>
-							<li class="fragment">Otwartością można <mark>udowodnić jakość</mark> i wykorzystać przy wygrywaniu przetarów</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Jakość kodu</h2>
-						<ul>
-							<li>Otwartość zwykle powoduje, u programistów, chęć pisania kodu w <mark>lepszej jakości</mark></li>
-							<li class="fragment">Podpisywanie się <mark>własnym nazwiskiem</mark></li>
-							<li class="fragment">Kod opublikowany &quot;raczej&quot; nie znika z internetu</li>
-						</ul>
-					</section>
-				</section>
+        <section>
+          <div>
+            <h2>We are in future!</h2>
+            <h1>2019`ish?</h1>
+          </div>
+        </section>
 
-				<section>
-					<section>
-						<h1>Niemierzalne zyski</h1>
-						<h2>publikacji OSS</h2>
-					</section>
+        <section>
+          <div>
+            <h2>Aplikacje są coraz więsze</h2>
+            <ol>
+              <li>Integracje, webserwisy, REST</li>
+              <li class="fragment">Internet of things</li>
+              <li class="fragment"><mark>Microserwisy</mark></li>
+              <li class="fragment">DevOps == <mark>Dev + Ops + QA</mark></li>
+            </ol>
+          </div>
+        </section>
 
-					<section>
-						<h2>Dla wielu osób sama <mark>możliwość tworzenia</mark> otwartego oprogramowania jest motywacją do pracy</h2>
-					</section>
+        <section>
+          <div>
+            <h2>Ilość błędów rośnie wraz ze złożonością</h2>
+            <p class="fragment">Wielkość kodu powoduje <mark>wykładniczy</mark> wzrost złożoności</p>
+            <p class="fragment">Złożoność powoduje <mark>liniowy</mark> przyrost błędów</p>
+          </div>
+        </section>
 
-					<section>
-						<h2>Dużo prościej nawiązać współpracę między firmami, łącząc wysiłki <mark>działów R&amp;D</mark> w ramach różnych inicjatyw</h2>
-            <span style="display: inline-block; background: white; padding: 1em;">
-              <img height="100" src="images/logos/W3C-Icon.png" class="boxed"/>
-              <img height="100" src="images/logos/html5-logo.png" class="boxed"/>
-              <img height="100" src="images/logos/java-ee.png" class="boxed"/>
-            </span>
-					</section>
-
-					<section>
-						<h2>Walka z</h2>
-						<img src="images/bigostrich.png" alt="" height="500" />
-					</section>
-				</section>
-
-        <section data-background-color="#C9342F" class="dark">
+        <section>
           <section>
-            <h1>Potęcjalne problemy przy wdrożeniu</h1>
+            <h1>Wyjątki</h1>
           </section>
 
           <section>
-            <h2>Brak zrozumienia istoty OSS i strach przed nieznanym</h2>
-            <ul>
-              <li>kierownictwo</li>
-              <li>zespoły prawne</li>
-              <li>zespoły finansowe</li>
-              <li>zespoły developerskie i administracyjne</li>
-            </ul>
-            <p>Mylenie z rezygnacją z zysków a co za tym idzie niczym nie uzasadniony <mark>strachem</mark> przed konkurencją</p>
+            <h2>Edsger Dijkstra</h2>
+            <img src="//upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Edsger_Wybe_Dijkstra.jpg/270px-Edsger_Wybe_Dijkstra.jpg" alt="" />
+            <p><small>1930 - 2002</small></p>
           </section>
 
           <section>
-            <h2>Kompleksy</h2>
-            <ul>
-              <li>Nieuzasadnione kompleksy</li>
-              <li>Bezsensowna chciwość</li>
-              <li>Niska samoocena</li>
-            </ul>
+            <h2>Structured programming</h2>
+            <blockquote>
+              &ldquo; Go To Statement Considered Harmful&rdquo;
+            </blockquote>
+            <p>E. Dijkstra 1968</p>
+            <img src="https://imgs.xkcd.com/comics/goto.png" alt="">
           </section>
 
           <section>
-            <h2>Tylko 27 groupid w Sonatype OSS Staging</h2>
-            <img src="images/maven-pl-groupid.jpg" height="500" />
+            <h2>Turing Machine</h2>
+
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Turing_Machine.png/1920px-Turing_Machine.png" alt="" />
+            <p>Staramy się uważać na skoki, choć są niezbędne</p>
           </section>
 
-          <section data-background-color="#7CB82F" class="dark">
-            <h1>Czas na Zmianę!</h1>
+          <section>
+            <h2>Wyjątek vs Goto</h2>
+            <ol>
+              <li>wyjątekoczywiście oznacza wystąpienie <mark>błędu</mark></li>
+              <li class="fragment">pozwala skoczyć <mark>tak jak goto</mark></li>
+              <li class="fragment">choć z ograniczeniami, tylko do obsługi</li>
+              <li class="fragment">wiele osób używa wyjątków <mark>zupełnie</mark> jak goto</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2>Checked vs Runtime</h2>
+            <ol>
+              <li>niewiele języków (Java, C# ?!) ma takie rozróżnie</li>
+              <li class="fragment">wyjątki <mark>checked</mark> łatwo prowadzą do łamania zasady Dijkstry</li>
+              <li class="fragment">używać ich można jedynie dla <mark>interfejsów API</mark></li>
+            </ol>
+
+            <p class="fragment">Będę mówił <mark>tylko o runtime</mark>!</p>
           </section>
         </section>
 
         <section>
           <section>
-            <h1>Jaki kod warto publikować, a jaki nie?</h1>
+            <h1>Wyjątki / Błędy</h1>
+
+            <h2>Najczęstsze problemy</h2>
           </section>
-          <section data-background-color="#C9342F" class="dark">
-            <h2>Jakiego kodu nie publikować?</h2>
-            <ul>
-              <li>Pełnych, kompletnych rozwiązań</li>
-              <li class="fragment">Produktów skierowanych do <mark>końcowego, nietechnicznego</mark> odbiorcy</li>
-              <li class="fragment">Fragmentów <mark>strategicznych</mark> dla sukcesu i powodzenia firmy</li>
-              <li class="fragment">Kodu niskiej jakości, lub mocno związanego z celem biznesowym</li>
-            </ul>
-          </section>
-          <section data-background-color="#7CB82F" class="dark">
-            <h2>Jaki kod publikować?</h2>
-            <ul>
-              <li>Biblioteki, <mark>reużywalne</mark>, ogólnego przeznaczenia</li>
-              <li class="fragment"><mark>Narzędzia</mark> dla programistów i administratorów</li>
-              <li class="fragment">Gotowe aplikacje skierowane do technicznego odbiorcy</li>
-              <li class="fragment">By developers, for developers</li>
-            </ul>
-          </section>
+
           <section>
-            <h2>Kiedy publikować i jak często?</h2>
-            <ul>
-              <li>Jak najwcześniej (nawet <mark>wersje wstępne</mark> w trakcie rozwoju)</li>
-              <li class="fragment">Jak <mark>najczęsciej</mark> (jak najmniejsze wdrożenia)</li>
-            </ul>
+            <h1>Widomość</h1>
+            <h3>która za mało mówi</h3>
+            <ol>
+              <li class="fragment">null / cant be null</li>
+              <li class="fragment">error</li>
+              <li class="fragment">value is invalid</li>
+            </ol>
           </section>
+
           <section>
-            <h2>Ekstremalny przypadek</h2>
-            <img src="images/logos/Gov.uk_logo.svg" />
+            <h1>Widomość</h1>
+            <h3>która zajmuje za dużo</h3>
+            <ol>
+              <li class="fragment">cała <mark>treść XML</mark> w message</li>
+              <li class="fragment">lista wszystkich 123 naruszeń</li>
+              <li class="fragment"><mark>treść</mark> niezaufanego certyfikatu</li>
+            </ol>
           </section>
+
+          <section>
+            <h1>Stacktrace</h1>
+            <h3>jest problematyczny</h3>
+            <ol>
+              <li class="fragment">zajmuje <mark>wiele linii</mark></li>
+              <li class="fragment">przez co trudno go przeglądać / parsować</li>
+              <li class="fragment">czasami wogóle <mark>nieprzydatny</mark></li>
+            </ol>
+          </section>
+
+          <section>
+            <h2>Stacktrace vs. Event'like</h2>
+
+            <img src="images/reactor-exception.png" alt="">
+          </section>
+
+          <section>
+            <h2>Ale i tak nieźle</h2>
+
+            <pre><code class="c++">Error: signal 11:
+./test(handler+0x19)[0x400911]
+/lib64/tls/libc.so.6[0x3a9b92e380]
+./test(baz+0x14)[0x400962]
+./test(bar+0xe)[0x400983]
+./test(foo+0xe)[0x400993]
+./test(main+0x28)[0x4009bd]
+/lib64/tls/libc.so.6(__libc_start_main+0xdb)[0x3a9b91c4bb]
+./test[0x40086a]</code></pre>
+<p>C++ jest dużo mniej czytelny</p>
+          </section>
+
+          <section>
+            <h2>Logi</h2>
+
+            <ol>
+              <li>w większości większych firm jest <mark>utrudniony dostęp</mark></li>
+              <li class="fragment">czasami ciężko zdobyć <mark>dokładnie ten</mark> stack trace o który nam chodzi</li>
+              <li class="fragment">czasami musimy czekać na <mark>anonimizację</mark> logów</li>
+            </ol>
+          </section>
+        </section>
+
+        <section>
+          <h1>Rozwiązanie</h1>
+        </section>
+
+        <section>
+            <h1>Exception ID</h1>
+            <h2>banalny pomysł</h2>
+            <ol>
+              <li>biblioteka dla Java</li>
+              <li>flow pracy</li>
+            </ol>
+        </section>
+        <section>
+            <h2>moje inspiracje</h2>
+            <ol>
+              <li>kod i flow pracy w Centralnym Ośrodku Informatyki,<br /> czyli tzw. CIN</li>
+              <li>biblioteka Guava</li>
+            </ol>
+        </section>
+
+        <section>
+          <div>
+            <h2>Eid</h2>
+            <pre><code class="java">
+  // Obiekt przechowujący informacje o błędzie
+  Eid eid = new Eid("20160111:173211", "WJS-001");
+  // '20160111:173211' - unikalne ID
+  // 'WJS-001' - opcjonalny numer referencyjny
+  // z zewnętrznego źródła
+            </code></pre>
+          </div>
+        </section>
+
+
+        <section>
+          <div>
+            <h2>Eid - standardowa reprezentacja</h2>
+            <pre><code class="java">
+  Eid eid = new Eid("20160111:173211");
+  eid.toString();
+  // ↵ [20160111:173211]&lt;sk9ym6&gt;
+  new Eid("20160111:173211").toString();
+  // ↵ [20160111:173211]&lt;b9qoq0&gt;
+  new Eid('20160111:173211', 'WJS-002').toString();
+  // ↵ [20160111:173211|WJS-002]&lt;dbo1az&gt;
+            </code></pre>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h2>Eid*Exception - zestaw wyjątków</h2>
+            <ol>
+              <li>EidRuntimeException</li>
+              <li>EidNullPointerException</li>
+              <li>EidIllegalArgumentException</li>
+              <li>EidIllegalStateException</li>
+              <li>EidIndexOutOfBoundsException</li>
+            </ol>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h2>Eid*Exception - przykłady użycia</h2>
+            <pre><code class="java">
+  Eid eid = new Eid("20160110:095947");
+  throw new EidIllegalArgumentException(eid);
+  throw new EidNullPointerException("20160111:130412");
+  throw new EidIllegalStateException(
+    "20150721:100554",
+    "No database connection in poll"
+  );
+            </code></pre>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h2>Eid*Exception - efekt?</h2>
+            <pre><code>
+ERROR 2016-01-11T22:48:42.445 EidIllegalStateException:
+↵ [20150721:100554]&lt;rww5y3&gt; => No database connection in poll
+        at pl.wavesoftware.examples.eid.EidTest.test(EidTest.java:56)
+        ...
+			</code></pre>
+          </div>
+        </section>
+
+
+        <section>
+          <div>
+            <h2>Eid*Exception - efekt?</h2>
+            <pre><code>
+  // linia podzielona na fragmenty
+  EidIllegalStateException: ↵    // typ błędu, zawsze
+  [20150721:100554] ↵            // ID statyczne, zawsze
+  &lt;rww5y3&gt; ↵                     // ID losowe, zawsze
+  No database connection in poll // komunikat, opcjonalny
+            </code></pre>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h2>Eid*Exception - error 500 page done right</h2>
+            <img style="height:400px" src="images/google-500-error-ok.png" />
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h2>Mając Eid wiemy gdzie wystąpił błąd</h2>
+            <p><img style="height:250px; flow: left" src="images/young-woman.png" />
+						<img style="height:250px" src="images/old-woman.jpg" />
+					</p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h2>Ale skąd te numery?</h2>
+          </div>
+        </section>
+
+
+        <section>
+          <div>
+            <h2>Generatory Eid - flow pracy</h2>
+            <blockquote>Aby pracować wydajnie i uniknąć copy &amp; paste, potrzebne nam generatory...</blockquote>
+            <br />
+            <ol>
+              <li><a href="https://github.com/wavesoftware/java-eid-exceptions/wiki/Generating%20Exception%20Id%20number%20in%20Intellij%20IDEA%20with%20Live%20Templates">Generating Exception Id number in Intellij IDEA with Live Templates</a></li>
+							<li><a href="http://plugins.netbeans.org/plugin/53137/exception-id-eid-generator">EidGenerator for Netbeans IDE</a></li>
+            </ol>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <iframe width="1120" height="630" src="https://www.youtube.com/embed/6ZBCSZvsN5k?controls=1&autoplay=1&loop=1&playlist=6ZBCSZvsN5k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </section>
+
+  <section>
+        <section>
+          <div>
+            <h2>EidPreconditions</h2>
+            <ol>
+              <li>zestaw wygodnych metod pomocniczych</li>
+              <li class="fragment">połączenie pomysłu Guava z Eid</li>
+              <li class="fragment">przyśpieszenie procesu developmentu</li>
+            </ol>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <p><strong><code>checkArgument</code></strong></p>
+
+            <br/>
+            <pre style="font-size: 1em;"><code class="java"> double sqrt(double value) {
+   checkArgument(
+     value >= 0.0d, "20150718:012333"
+   );
+   // if ok, calculate the square root
+ }</code></pre>
+ <blockquote>checkArgument używamy aby sprawdzić dane wejściowe do metody pod kątem technicznym, nie biznesowym</blockquote>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <p><strong><code>checkState</code></strong></p>
+            <br />
+            <pre style="font-size: 1em;"><code class="java"> checkState(
+     r >= 0.0d &amp;&amp; mass > 0.0d,
+     "20150721:115016"
+ );</code></pre>
+						<br />
+            <blockquote>checkState używamy aby sprawdzić stan obiektu w danej chwili pod kątem technicznym a nie biznesowym</blockquote>
+          </div>
+        </section>
+
+        <section>
+          <div>
+						<p><strong><code>checkNotNull</code></strong></p>
+            <br />
+            <pre style="font-size: 1em;"><code class="java"> User safeUser = checkNotNull(
+   user, "20150721:115515"
+ );</code></pre>
+
+						<br />
+            <blockquote>checkNotNull używamy aby upewnić się że jakaś wartość nie jest null'em pownieważ w danym kontekście takiej wartości nie obsługujemy</blockquote>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <p><strong><code>checkElementIndex</code></strong></p>
+            <br />
+            <pre style="font-size: 1em;"><code class="java">checkElementIndex(
+    index, list.size(),
+    "20150721:115749"
+);</code></pre>
+<br />
+<blockquote>checkElementIndex używamy aby sprawdzić parametry dla tablic i kolekcji random-access, przed ich użyciem</blockquote>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h2>EidExecutions</h2>
+						<p><strong><code>tryToExecute</code></strong></p>
+            <br />
+            <pre style="font-size: 0.8em;"><code>InputStream is = tryToExecute(
+    () -> { loadFile("project.properties"); },
+    "20150718:121521"
+);</code></pre>
+
+<br />
+<blockquote>tryToExecute używamy dla operacji, które powinny wykonywać się poprawnie, ale technicznie mogą zakończyć się błędem</blockquote>
+          </div>
+        </section>
+			</section>
+
+        <section>
+            <div>
+                <h2>Bonusowo!</h2>
+            </div>
+        </section>
+
+
+        <section>
+          <div>
+            <h2>Eid - logowanie</h2>
+            <pre style="font-size: 0.8em;"><code class="java">log.debug(new Eid("20151119:121814")
+   ↵ .message("REST request: {0}", request)
+   ↵ .toString());</code></pre>
+	 					<div class="fragment">
+            <h2>Konsola:</h2>
+            <pre style="font-size: 0.65em;"><code>2017-01-08 16:45:34,334 DEBUG [20151119:121814]&lt;d1afca&gt;
+  ↵ REST request received: &lt;RestRequest user=&lt;User id=345&gt;
+  ↵ flow=ShowLastTransactions step=Confirm&gt;</code></pre>
+</div>
+          </div>
         </section>
 
 				<section>
-					<section data-background-color="#fff">
-						<h2>Krótka historia OSS w</h2>
-            <img src="images/logos/coi.png" alt="" />
-
-					</section>
-          <section>
-            <h2>Jak wybraliśmy kod do publikacji i czemu?</h2>
-            <ul>
-              <li>Kod narzędziowy, przydatny w innych projektach</li>
-              <li class="fragment">Nie związany z biznesowym celem</li>
-              <li class="fragment">Kluczowe, strategiczne fragmenty jako reużywalne moduły i bibioteki</li>
-            </ul>
-          </section>
-					<section>
-						<h2>Co zyskaliśmy w COI dzięki OSS?</h2>
-						<ul>
-							<li>Wiedza i potwierdzenie poprawności tworzonych rozwiązań</li>
-							<li class="fragment">Uproszczenia w infrastrukturze IT</li>
-							<li class="fragment">Zgłoszenia o błędach i poprawki PR</li>
-							<li class="fragment">Rozpoznawalność i motywację pracowników</li>
-							<li class="fragment">Projekt pl.ID się udał!</li>
-						</ul>
-					</section>
-					<section>
-						<img src="images/coi-github.jpg" alt="" class="boxed" />
-					</section>
-					<section>
-						<img src="images/puppet-jboss-forge.jpg" alt="" class="boxed" />
-					</section>
-					<section>
-						<h2>Co planujemy w przyszłości?</h2>
-						<ul>
-							<li>Powiększenie ilości publikowanego kodu a także zakresu</li>
-							<li class="fragment">Współpraca przy standardach webowych</li>
-							<li class="fragment">Sky is the limit!</li>
-						</ul>
-					</section>
+					<h2>True Story - COI</h2>
+					<img height="300" width="500" src="images/histogram.png" alt="">
+					<ol>
+						<li>efektywna analiza i poprawianie najistotniejszych błedów</li>
+						<li>98,6 % unikalnych numerów Eid (25k numerów)</li>
+					</ol>
 				</section>
 
-        <section data-background-color="#2ECC71" class="dark">
-          <h1>Podsumowując</h1>
-          <ul>
-            <li>Biznesowy, realny model</li>
-            <li>Szansa do wykorzystania</li>
-            <li>Nowoczesne myślenie</li>
-          </ul>
-          <p><img src="images/github-smile.png" alt="" /></p>
+        <section>
+            <div>
+                <img src="images/thanks.png" alt="" />
+            </div>
         </section>
 
-				<section data-background-image="images/kariera-IT.png"
-          data-background-color="#231F27"
-          data-background-transition="slide"
-          class="dark">
-					<p class="vspace" />
-					<h1 class="title">Dziękuję</h1>
-				</section>
+        <section>
+          <div>
+            <h2>Linki</h2>
+            <ol>
+              <li><a href="https://github.com/wavesoftware/java-eid-exceptions">ExceptionID @ Github</a></li>
+              <li><a href="https://rawgit.com/wavesoftware/javascript-eid-exceptions/develop/dist/browser/index.html">ExceptionID.js - live showcase</a></li>
+              <li><a href="https://github.com/wavesoftware/java-eid-exceptions/wiki/Generating%20Exception%20Id%20number%20in%20Intellij%20IDEA%20with%20Live%20Templates">Generating Exception Id number in Intellij IDEA with Live Templates</a></li>
+              <li><a href="http://plugins.netbeans.org/plugin/53137/exception-id-eid-generator">EidGenerator for Netbeans IDE</a></li>
+              <li><a href="http://twitter.com/ksuszynski">@ksuszynski</a></li>
+            </ol>
+          </div>
+        </section>
+      </div>
+    </div>
 
-        <!--
-          * Kim jestem?
-          * COI
-          * O czym będzie?
-            * Czym jest OSS?
-            * Jakie zalety ma publikowanie OSS
-            * Jak wprowadzić publikowanie OSS
-            * Co zyskaliśmy w pl.ID dzięki publikowaniu OSS
-          * Do kogo skierowana jest prezentacja?
-          * Po co publikować OSS?
-            * Mierzalne zyski
-            * Nie mierzalne zyski
-          * OSS a wolne oprogramowanie
-          * Co zyskaliśmy w pl.ID dzięki publikowaniu OSS
-            * wiedza i potwierdzenie poprawności
-            * zgłoszenia błędów i poprawki PR
-            * projekt się udał
-          * Co warto publikować a czego nie?
-          * Kiedy publikować?
-          * Jak wprowadzić publikowanie OSS w swojej organizacji?
-            * Jak wybrać fragmenty do opublikowania?
-            * Jak przekonać zespół że warto?
-            * Jak przekonać szefów że warto?
-            * Na jakie przeszkody się przygotować?
-          * Podsumowanie
-        -->
-			</div>
-		</div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
-
-		<script>
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
         controls: true,
-				progress: true,
-				history: true,
-				center: true,
+        progress: true,
+        history: true,
+        center: true,
         zoomKey: 'ctrl',
 
-				transition: 'convex', // none/fade/slide/convex/concave/zoom
+        transition: 'convex', // none/fade/slide/convex/concave/zoom
 
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true }
-				]
-			});
-		</script>
-	</body>
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true }
+        ]
+      });
+    </script>
+  </body>
 </html>
